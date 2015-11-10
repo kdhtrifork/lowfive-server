@@ -28,6 +28,10 @@ io.on('connection', function(socket){
     io.sockets.emit('new-snippet');
   });
 
+  socket.on('insert-snippet', function(snippet){
+    io.sockets.emit('insert-snippet', snippet);
+  });
+
   socket.on('disconnect', function(){
     console.log('Cya !');
   });
